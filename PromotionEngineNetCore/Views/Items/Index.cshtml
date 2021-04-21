@@ -1,0 +1,70 @@
+﻿@model IEnumerable<ShoppingViewModel>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Product List</h2>
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.css" />
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
+
+<script type="text/javascript">
+        function AddToCart(item) {
+            var itemId = $(item).attr("itemid");
+            swal("Congratulations!", "Item Added to Cart. Click Cart to Check!", "success");
+            var formData = new FormData();
+            formData.append("ItemId", itemId)
+            $.ajax({
+                async: true,
+                type: 'POST',
+                contentType: false,
+                processData: false,
+                data: formData,
+                url: '/Shopping/Index',
+                success: function (data) {
+                    if (data.Success) {
+                        alert("Item Added");
+                    }
+                },
+                error: function () {
+                    alert("Error Occurred");
+
+                }
+
+            });
+
+        }
+</script>
+
+<div class="container">
+    @foreach (var item in ViewBag.Products)
+    {
+
+        <div class="col-md-4" style="border: 2px solid red">
+            <div style="text-align: center; border-bottom: 2px solid green">
+                <h3> @item.ItemName</h3>
+
+            </div>
+            <div>
+                <div class="col-md-8">
+                    <img src="~/images/@item.ItemImage" width="150px" height="150px" />
+                </div>
+                <div class="col-md-4" style="text-align: left">
+                    <b>@item.ItemDescription</b>
+                </div>
+            </div>
+
+            <div class="col-md-8" style="font-size: 18px; border-top: 2px solid green">
+                <b>@item.ItemPrice.ToString(format: "#,##0.00 INR")</b>
+            </div>
+
+            <div class="col-md-4" style="text-align: right; margin-bottom: 10px; border-top:2px solid green; padding: 2px">
+                <input type="button" name="AddToCart" value="Add to Cart" class="btn btn-primary" itemid="@item.Id" id="btnAddToCart" onclick="AddToCart(this)" />
+            </div>
+        </div>
+    }
+</div>
+
+
