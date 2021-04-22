@@ -1,0 +1,11 @@
+C:\Users\Manas\PromotionEngineNetCore\PromotionEngineNetCore\PromotionEngineNetCore\obj\Debug\netcoreapp2.0\PromotionEngineNetCore.csprojAssemblyReference.cache
+C:\Users\Manas\PromotionEngineNetCore\PromotionEngineNetCore\PromotionEngineNetCore\obj\Debug\netcoreapp2.0\PromotionEngineNetCore.csproj.CoreCompileInputs.cache
+C:\Users\Manas\PromotionEngineNetCore\PromotionEngineNetCore\PromotionEngineNetCore\obj\Debug\netcoreapp2.0\PromotionEngineNetCore.AssemblyInfoInputs.cache
+C:\Users\Manas\PromotionEngineNetCore\PromotionEngineNetCore\PromotionEngineNetCore\obj\Debug\netcoreapp2.0\PromotionEngineNetCore.AssemblyInfo.cs
+C:\Users\Manas\PromotionEngineNetCore\PromotionEngineNetCore\PromotionEngineNetCore\bin\Debug\netcoreapp2.0\PromotionEngineNetCore.deps.json
+C:\Users\Manas\PromotionEngineNetCore\PromotionEngineNetCore\PromotionEngineNetCore\bin\Debug\netcoreapp2.0\PromotionEngineNetCore.runtimeconfig.json
+C:\Users\Manas\PromotionEngineNetCore\PromotionEngineNetCore\PromotionEngineNetCore\bin\Debug\netcoreapp2.0\PromotionEngineNetCore.runtimeconfig.dev.json
+C:\Users\Manas\PromotionEngineNetCore\PromotionEngineNetCore\PromotionEngineNetCore\bin\Debug\netcoreapp2.0\PromotionEngineNetCore.dll
+C:\Users\Manas\PromotionEngineNetCore\PromotionEngineNetCore\PromotionEngineNetCore\bin\Debug\netcoreapp2.0\PromotionEngineNetCore.pdb
+C:\Users\Manas\PromotionEngineNetCore\PromotionEngineNetCore\PromotionEngineNetCore\obj\Debug\netcoreapp2.0\PromotionEngineNetCore.dll
+C:\Users\Manas\PromotionEngineNetCore\PromotionEngineNetCore\PromotionEngineNetCore\obj\Debug\netcoreapp2.0\PromotionEngineNetCore.pdb
