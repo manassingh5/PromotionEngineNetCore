@@ -1,0 +1,30 @@
+﻿@model PromotionViewModel
+
+<div class="container">
+    <form method="post">
+        <div class="col-md-4">
+            <div class="form-group">
+                ItemName:
+                @Html.TextBoxFor(expression: model => model.ItemName, htmlAttributes: new { @class = "form-control" })
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="form-group">
+                ItemQuantity:
+                @Html.TextBoxFor(expression: model => model.ItemQuantity, htmlAttributes: new { @class = "form-control" })
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="form-group">
+                ItemPrice:
+                @Html.TextBoxFor(expression: model => model.ItemPrice, htmlAttributes: new { @class = "form-control" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <input type="submit" name="addButton" value="AddPromotions" class="btn btn-primary" style="background-color:green" />
+        </div>
+    </form>
+</div>
