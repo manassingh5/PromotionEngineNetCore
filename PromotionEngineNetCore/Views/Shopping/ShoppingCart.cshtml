@@ -1,0 +1,76 @@
+﻿@model IEnumerable<ShoppingCartModel>
+@{
+    ViewData["Title"] = "ShoppingCart";
+    decimal TotalAmount = 0.00M;
+}
+<html>
+<body>
+
+    <h2>ShoppingCart</h2>
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.css" />
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
+
+    <table class="table-striped" style="width:100%">
+        <tr>
+            <th style="text-align: right">Image</th>
+            <th style="text-align: right">ItemName</th>
+            <th style="text-align: right">Quantity</th>
+            <th style="text-align: right">Price</th>
+            <th style="text-align: right">Total</th>
+            <th style="text-align: right">Option</th>
+        </tr>
+        @if (Model != null)
+        {
+            @foreach (var item in Model)
+            {
+                TotalAmount += item.Total;
+                <tr>
+                    <td style="text-align: right">
+                        <img src="~/images/@item.ImageName" height="30px" width="30px" class=" img-rounded" />
+                    </td>
+                    <td style="text-align: right">
+                        @item.ItemName
+                    </td>
+                    <td style="text-align: right">
+                        @item.ItemQuantity.ToString(format: "#,##0")
+                    </td>
+                    <td style="text-align: right">
+                        @item.ItemPrice.ToString(format: "#,##0.00")
+                    </td>
+                    <td style="text-align: right">
+                        @item.Total.ToString(format: "#,##0.00")
+                    </td>
+                    <td style="text-align: right">
+                        <a asp-controller="Shopping" asp-action="remove" asp-route-id="@item.ItemId">Remove</a>
+                    </td>
+
+                </tr>
+            }
+        }
+        <tr>
+            <td colspan="4" style="text-align: right; color:chocolate">
+                <h4>Total Amount</h4>
+            </td>
+            <td style="text-align: right; color:chocolate">
+                <h4> @TotalAmount.ToString(format: "#,##0.00")</h4>
+            </td>
+        </tr>
+
+        <tr style="text-align: center">
+            <td colspan="5">
+                @Html.ActionLink(linkText: "Back To Shopping", actionName: "Index", controllerName: "Items")
+            </td>
+            <td colspan="6">
+                <a asp-controller="checkout" asp-action="index" asp-route-id="">Proceed Checkout</a>
+            </td>
+        </tr>
+
+    </table>
+    <br />
+
+</body>
+</html>
+

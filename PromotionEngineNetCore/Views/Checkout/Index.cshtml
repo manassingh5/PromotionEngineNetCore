@@ -1,0 +1,46 @@
+﻿@model IEnumerable<CheckoutModel>
+@{
+    ViewData["Title"] = "Index";
+    decimal TotalAmount = 0.00M;
+}
+
+<html>
+<body>
+    <h2>Bill Generated</h2>
+    <table class="table-condensed" style="width:100%">
+        <tr>
+            <th style="text-align: right">ItemName</th>
+            <th style="text-align: right">TotalPrice</th>
+            <th style="text-align: right">TotalQuantity</th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            TotalAmount += item.TotalPrice;
+            <tr>
+                <td style="text-align: right">
+                    @item.ItemName
+                </td>
+                <td style="text-align: right">
+                    @item.TotalPrice.ToString(format: "#,##0.00")
+                </td>
+                <td style="text-align: right">
+                    @item.TotalQuantity.ToString(format: "#,##0")
+                </td>
+            </tr>
+        }
+
+        <tr>
+            <td colspan="4" style="text-align: right">
+                <h3>Total Bill</h3>
+            </td>
+            <td style="text-align: right">
+                <h3> @TotalAmount.ToString(format: "#,##0.00")</h3>
+            </td>
+        </tr>
+
+    </table>
+</body>
+</html>
+
+
