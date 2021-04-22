@@ -57,10 +57,12 @@ namespace PromotionEngineNetCore.Controllers
                     listBill.Add(new CheckoutModel() { ItemName = name, TotalPrice = totalPrice, TotalQuantity = totalQuantity });
                     continue;
                 }
-                while (quantity > promQuantity)
+                while (quantity > totalQuantity + promQuantity)
                 {
                     totalPrice = totalPrice + item.promPrice;
-                    promQuantity = promQuantity + promQuantity;
+                    //promQuantity = promQuantity + promQuantity;
+                    totalQuantity = totalQuantity + promQuantity;
+                    
                 }
                 if (quantity == promQuantity)
                 {
@@ -70,7 +72,7 @@ namespace PromotionEngineNetCore.Controllers
                     continue;
                 }
                 
-                totalPrice = totalPrice + item.ItemPrice * (item.ItemQuantity - item.promiq);
+                totalPrice = totalPrice + item.ItemPrice * (item.ItemQuantity - totalQuantity);
                 totalQuantity = quantity;
                 listBill.Add(new CheckoutModel() { ItemName = name, TotalPrice = totalPrice, TotalQuantity = totalQuantity });
             }
