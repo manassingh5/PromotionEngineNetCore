@@ -41,6 +41,7 @@ namespace PromotionEngineNetCore
             }
 
             app.UseStaticFiles();
+            app.UseSession();
 
             app.UseMvc(routes =>
             {
