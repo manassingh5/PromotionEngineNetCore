@@ -60,7 +60,6 @@ namespace PromotionEngineNetCore.Controllers
                 while (quantity > totalQuantity + promQuantity)
                 {
                     totalPrice = totalPrice + item.promPrice;
-                    //promQuantity = promQuantity + promQuantity;
                     totalQuantity = totalQuantity + promQuantity;
                     
                 }
