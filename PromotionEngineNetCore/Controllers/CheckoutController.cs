@@ -47,6 +47,7 @@ namespace PromotionEngineNetCore.Controllers
                 string name = item.ItemName;
                 int quantity = item.ItemQuantity;
                 int promQuantity = item.promiq;
+                decimal promPrice = item.promPrice;
                 decimal totalPrice = 0;
                 int totalQuantity = 0;
                 while (quantity > promQuantity)
@@ -54,7 +55,13 @@ namespace PromotionEngineNetCore.Controllers
                     totalPrice = totalPrice + item.promPrice;
                     promQuantity = promQuantity + promQuantity;
                 }
-
+                if (quantity == promQuantity)
+                {
+                    totalPrice = promPrice;
+                    totalQuantity = quantity;
+                    listBill.Add(new CheckoutModel() { ItemName = name, TotalPrice = totalPrice, TotalQuantity = totalQuantity });
+                    continue;
+                }
                 totalPrice = totalPrice + item.ItemPrice;
                 totalQuantity = quantity;
 
